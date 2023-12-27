@@ -87,8 +87,8 @@ button {
 .card {
     display: flex;
     position: relative;
-    width: 90px;
-    height: 80px;
+    width: 100px;
+    height: 90px;
     cursor: pointer;
     text-align: center;
     /* justify-content: center;
@@ -153,3 +153,11 @@ button {
 .highlight {
     color: #6f00fc;
 }
+#audio{
+    width: 0;
+    height: 0;
+ }
+ #audioMatch{
+    width: 0;
+    height: 0;
+ }

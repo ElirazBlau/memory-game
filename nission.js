@@ -22,6 +22,9 @@ const state = {
     loop: null,
     selectedCards: []
 };
+const audio = document.getElementById('audio');
+const audioMatch = document.getElementById('audioMatch');
+
 
 function shuffle(arrayForShuffling) {
     let temp;
@@ -47,9 +50,9 @@ const pickRandom = (array, items) => {
 };
 
 const generateGame = () => {
-    const dimensions = 4; // Set the board dimension manually
+    const dimensions = 4; 
 
-    const picks = pickRandom(emojis, (dimensions * dimensions) / 2); // Pick random items
+    const picks = pickRandom(emojis, (dimensions * dimensions) / 2); 
     const items = shuffle([...picks, ...picks]);
     const cards = `
         <div class="board">
@@ -90,10 +93,13 @@ const flipBackCards = () => {
 
 const compareCards = () => {
     const [firstCard, secondCard] = state.selectedCards;
-
+ 
     if (firstCard.src === secondCard.src) {
         firstCard.parentElement.parentElement.classList.add('matched');
         secondCard.parentElement.parentElement.classList.add('matched');
+        audio.play();
+    } else {
+        audioMatch.play();
     }
 };
 
